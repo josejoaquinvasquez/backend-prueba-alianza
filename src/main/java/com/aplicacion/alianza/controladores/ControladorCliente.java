@@ -34,7 +34,7 @@ public class ControladorCliente {
      * @return List<ClienteDTO>
      */
     @PostMapping("/crear")
-    public ResponseEntity<ClienteDTO> crearAuto(@RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> crearCliente(@RequestBody ClienteDTO clienteDTO) {
         try {
         	logger.info("Inicia ejecuciòn del servicio crear cliente");
             ClienteDTO cliente = servicioCliente.crearCliente(clienteDTO);
@@ -43,7 +43,6 @@ public class ControladorCliente {
         } catch (Exception e) {
             logger.error(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    //headers(servicioGenerarHeaderError.generarHeader(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage()))
                     .build();
         }
     }
@@ -63,7 +62,6 @@ public class ControladorCliente {
         } catch (Exception e) {
             logger.error(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    //headers(servicioGenerarHeaderError.generarHeader(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage()))
                     .build();
         }
     }
@@ -82,7 +80,6 @@ public class ControladorCliente {
         } catch (Exception e) {
             logger.error(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    //headers(servicioGenerarHeaderError.generarHeader(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage()))
                     .build();
         }
     }
